@@ -1,0 +1,4 @@
+Browsing the Home Page of the HPB Corporate Website
+In order start exploring the HPB Corporate Website
+As a user
+I want have quick access to information that is useful to me on the Home page
