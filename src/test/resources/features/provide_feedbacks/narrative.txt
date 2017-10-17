@@ -1,0 +1,4 @@
+Give feedbacks via the "Rate This Site" form
+In order provide my feedbacks to the Health Promotion Board
+As a user
+I want use the "Rate This Site" form to submit my ratings and comments
