@@ -1,0 +1,4 @@
+Browsing the HPB Corporate Website
+In order find out health related information
+As a public user
+Joe wants to browse the contents in the HPB Corporate Website

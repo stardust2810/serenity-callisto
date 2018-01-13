@@ -5,8 +5,10 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.*;
-;
+import org.apache.logging.log4j.Logger;
+
 
 import java.util.Iterator;
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.stream.Collectors;
 
 @DefaultUrl("https://www.hpb.gov.sg")
 public class HomePage extends PageObject {
+
+    private static Logger log = LogManager.getLogger(HomePage.class);
 
     @FindBy(className="nav__listing")
     private WebElementFacade mainNav;
@@ -57,8 +61,9 @@ public class HomePage extends PageObject {
             WebElement testimonials = getDriver().findElement(By.className("testimonial"));
 
             System.out.println("Testimonial section exist, checking for individual testimonials");
+            log.debug("Testimonial section exist, checking for individual testimonials");
             //List<WebElement> rows = testimonials.findElements(By.cssSelector("div.testimonial__entry.row"));
-            List<WebElement> rows = testimonials.findElements(By.xpath("//div[@class='testimonial__entry row slick-slide']"));
+            List<WebElement> rows = testimonials.findElements(By.xpath("//p[@class='quote-text']"));
             //List<WebElement> rows = testimonials.findElements(By.className("quote-text"));
             System.out.println("Row size " + rows.size());
             if (rows.size() == 0)
@@ -66,24 +71,6 @@ public class HomePage extends PageObject {
             else {
                 // print the total number of elements
                 System.out.println("Total selected rows are " + rows.size());
-                /*
-
-                // Now using Iterator we will iterate all elements
-                Iterator<WebElement> iter = rows.iterator();
-
-                // this will check whether list has some element or not
-                while (iter.hasNext()) {
-
-                    // Iterate one by one
-                    WebElement item = iter.next();
-
-                    // get the text
-                    String label = item.getText();
-
-                    // print the text
-                    System.out.println("Text is " + label);
-                }
-                */
             }
             return true;
         } catch (NoSuchElementException e) {

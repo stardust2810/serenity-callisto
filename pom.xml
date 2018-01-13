@@ -60,6 +60,11 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.9.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -115,6 +120,26 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target>
+                                <copy file="C:\Users\Jeffrey\Documents\GitHub\serenity-callisto\src" tofile="C:\Users\Jeffrey\Documents\Projects\serenity\callisto\src"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
         </plugins>
     </build>
 </project>
