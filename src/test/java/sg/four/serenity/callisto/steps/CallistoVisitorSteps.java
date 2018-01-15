@@ -2,19 +2,14 @@ package sg.four.serenity.callisto.steps;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 
-import sg.four.serenity.callisto.questions.NOWArticleListResults;
-import sg.four.serenity.callisto.tasks.GoToNOWLandingPage;
-import sg.four.serenity.callisto.tasks.OpenHomePage;
-import sg.four.serenity.callisto.tasks.DoASearch;
-import sg.four.serenity.callisto.tasks.ScrollToSection;
-import sg.four.serenity.callisto.questions.AlgoliaSearchResults;
-import sg.four.serenity.callisto.questions.MainMenuItemResults;
-import sg.four.serenity.callisto.questions.UsefulInfoTabItemResults;
+import sg.four.serenity.callisto.questions.*;
+import sg.four.serenity.callisto.tasks.*;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -64,15 +59,24 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(UsefulInfoTabItemResults.tabs_shown(), hasItem(containsString("Grant Applicants"))));
     }
 
-    @Given("^(.*) wants to read N.O.W Issue$")
-    public void read_enews_from_now(String actorName) throws Throwable {
+    @Given("^(.*) wants to read N\\.O\\.W Issues$")
+    public void user_wants_to_read_N_O_W_Issues(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(GoToNOWLandingPage.open());
         theActorCalled(actorName).should(seeThat(NOWArticleListResults.cards_shown(), hasItem(containsString("N.O.W Issue 1"))));
         theActorCalled(actorName).should(seeThat(NOWArticleListResults.cards_shown(), hasItem(containsString("N.O.W Issue 2"))));
     }
 
-    @Given("^(.*) wants to search both the local and gov faqs")
-    public void search_local_and_gov_faqs throws Throwable {
 
+    @Given("^(.*) searches for (.*) within the faq section")
+    public void search_within_the_faq_section(String actorName, String search_term) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenFAQPage.open());
+        theActorCalled(actorName).attemptsTo(DoASearchinFAQ.enterSearch(search_term));
+        //theActorCalled(actorName).should(seeThat(FAQSearchResults.text(),is("Healthier Ingredient Scheme")));
     }
+
+    @Then("^(.*) should see the faq programme (.*) displayed$")
+    public void the_faq_programme_displayed(String actorName, String programme_name) throws Throwable {
+        theActorCalled(actorName).should(seeThat(FAQSearchResults.text(),is(programme_name)));
+    }
+
 }

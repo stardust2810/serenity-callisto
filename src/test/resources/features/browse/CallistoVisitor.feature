@@ -19,5 +19,11 @@ Feature: Visit the HPB Corporate Website
     * 'Joe' wants to read N.O.W Issues
 
   @faq
-  Scenario: Joe wants to search the faqs within the corporate website and the gov ifaq website
-    * 'Joe' wants to search both the local and gov faqs
+  Scenario Outline: Joe wants to search the faqs within the corporate website and the gov ifaq website
+    Given 'Joe' searches for <keyword> within the faq section
+    Then 'Joe' should see the faq programme <name> displayed
+
+  Examples: faq_terms
+    | keyword | name |
+    | ingredient | Healthier Ingredient Development Scheme |
+    | service provider | Directory of Service Providers |
