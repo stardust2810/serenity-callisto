@@ -79,4 +79,11 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(FAQSearchResults.text(),is(programme_name)));
     }
 
+    @Given("^(.*) submits a feedback$")
+    public void submits_a_feedback(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenFeedbackPage.open());
+        //theActorCalled(actorName).attemptsTo(FillUpFeedbackForm.entersDetails("Suggestions", "Allow me to update my appointment online", "onlyyou@hotmail.com", "Joe Tan"));
+        //theActorCalled(actorName).should(seeThat(FeedbackFormResults.text(),is("Thank you for your feedback! We will take down your message and get back to you very soon!")));
+    }
+
 }

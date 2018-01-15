@@ -27,3 +27,7 @@ Feature: Visit the HPB Corporate Website
     | keyword | name |
     | ingredient | Healthier Ingredient Development Scheme |
     | service provider | Directory of Service Providers |
+
+  @feedback
+  Scenario: Joe submits a feedback
+    * 'Joe' submits a feedback
