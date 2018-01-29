@@ -82,8 +82,14 @@ public class CallistoVisitorSteps {
     @Given("^(.*) submits a feedback$")
     public void submits_a_feedback(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenFeedbackPage.open());
-        //theActorCalled(actorName).attemptsTo(FillUpFeedbackForm.entersDetails("Suggestions", "Allow me to update my appointment online", "onlyyou@hotmail.com", "Joe Tan"));
+        theActorCalled(actorName).attemptsTo(FillUpFeedbackForm.entersDetails("Suggestions", "Allow me to update my appointment online", "onlyyou@hotmail.com", "Joe Tan"));
         //theActorCalled(actorName).should(seeThat(FeedbackFormResults.text(),is("Thank you for your feedback! We will take down your message and get back to you very soon!")));
+    }
+
+    @Given("^(.*) visits the about page$")
+    public void visits_the_about_page(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenAboutPage.open());
+        theActorCalled(actorName).should(seeThat(AboutPageResults.text(),containsString("Established in 2001, the Health Promotion Board (HPB) is a government organisation committed to promoting healthy living in Singapore. HPB is a credible and authoritative source of evidence-based health information that seeks to empower the Singapore public with knowledge and skills to take ownership of their health and live a healthy lifestyle. We, in turn, are guided by evidence-based health knowledge to formulate and implement health policies and programmes that will improve the nation’s health.")));
     }
 
 }
