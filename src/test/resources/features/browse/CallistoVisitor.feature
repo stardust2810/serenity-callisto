@@ -31,3 +31,7 @@ Feature: Visit the HPB Corporate Website
   @feedback
   Scenario: Joe submits a feedback
     * 'Joe' submits a feedback
+
+  @about
+  Scenario: Joe visits the about page
+    * 'Joe' visits the about page
