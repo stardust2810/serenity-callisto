@@ -11,14 +11,16 @@ import org.openqa.selenium.WebElement;
 @DefaultUrl("https://www.hpb.gov.sg/feedback")
 public class FeedbackPage extends PageObject {
 
-    @FindBy(className="form-container")
+    //@FindBy(className="form-container")
+    @FindBy(id="Dropdown-1")
     WebElement formSection;
 
     private static Logger log = LogManager.getLogger(Home.class);
     //public static Target CARD_ITEMS = Target.the("list of cards").locatedBy(".link-card__title");
-
+/*
     @WhenPageOpens
     public void waitUntilFormAppears() {
         element(formSection).waitUntilVisible();
     }
+    */
 }
