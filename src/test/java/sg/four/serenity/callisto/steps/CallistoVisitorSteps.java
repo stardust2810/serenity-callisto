@@ -102,18 +102,32 @@ public class CallistoVisitorSteps {
     public void visits_the_schools_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenSchoolsPage.open());
         theActorCalled(actorName).should(seeThat(SchoolsPageResults.text(),containsString("Schools are a large part of a student’s life, and can play an important role in establishing life-long healthy habits. As such, we work closely with schools to create health promoting environments where students can play, learn, and grow in.")));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("School Programmes"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Student Medical Appointments"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("HealthZone"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("School Dental Centre"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Student Health Centre"))));
     }
 
     @Given("^(.*) visits the community page$")
     public void visits_the_community_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenCommunityPage.open());
         theActorCalled(actorName).should(seeThat(CommunityPageResults.text(),containsString("By promoting the importance of healthy living anytime and anywhere, as envisioned in the Healthy Living Master Plan, HPB aims to drive sustainable behaviour change and ultimately foster a community that embraces healthy living!")));
+        theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Healthcare Partners"))));
+        theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Smoking Cessation Consultant Training"))));
+        theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Health Ambassadors"))));
+        theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Health Promoting Malls"))));
+        theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Festivals and Events"))));
     }
 
     @Given("^(.*) visits the healthy living page$")
     public void visits_the_healthy_living_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenHealthyLivingPage.open());
         theActorCalled(actorName).should(seeThat(HealthyLivingPageResults.text(),containsString("At Health Promotion Board, we promote a holistic approach to leading a healthy lifestyle. This includes staying physically active while maintaining a balanced diet, and going for regular screening. Take a look around this section for a better understanding of the various types of work that we do!")));
+        theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Substance Abuse"))));
+        theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Food & Beverage"))));
+        theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Physical Activity"))));
+        theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Preventive Health"))));
     }
 
     @Given("^(.*) visits the partnership page$")

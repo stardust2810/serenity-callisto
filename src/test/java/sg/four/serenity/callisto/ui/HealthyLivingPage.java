@@ -11,4 +11,5 @@ public class HealthyLivingPage extends PageObject {
 
     private static Logger log = LogManager.getLogger(HealthyLivingPage.class);
     public static Target INTRO_TEXT = Target.the("intro text").locatedBy(".rte");
+    public static Target CARD_ITEMS = Target.the("list of cards").locatedBy(".link-card__title");
 }
