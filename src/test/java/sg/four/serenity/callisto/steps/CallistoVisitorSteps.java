@@ -92,4 +92,21 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(AboutPageResults.text(),containsString("Established in 2001, the Health Promotion Board (HPB) is a government organisation committed to promoting healthy living in Singapore. HPB is a credible and authoritative source of evidence-based health information that seeks to empower the Singapore public with knowledge and skills to take ownership of their health and live a healthy lifestyle. We, in turn, are guided by evidence-based health knowledge to formulate and implement health policies and programmes that will improve the nation’s health.")));
     }
 
+    @Given("^(.*) visits the workplace page$")
+    public void visits_the_workplace_page(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenWorkplacePage.open());
+        theActorCalled(actorName).should(seeThat(WorkplacePageResults.text(),containsString("The workplace is where most adult Singaporeans spend a majority of their day at, and is thus a key setting for health promotion. Companies and organisations can have a positive influence on their employee’s health, through creating the right type of working environment.")));
+    }
+
+    @Given("^(.*) visits the schools page$")
+    public void visits_the_schools_page(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenSchoolsPage.open());
+        theActorCalled(actorName).should(seeThat(SchoolsPageResults.text(),containsString("Schools are a large part of a student’s life, and can play an important role in establishing life-long healthy habits. As such, we work closely with schools to create health promoting environments where students can play, learn, and grow in.")));
+    }
+
+    @Given("^(.*) visits the community page$")
+    public void visits_the_community_page(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenCommunityPage.open());
+        theActorCalled(actorName).should(seeThat(CommunityPageResults.text(),containsString("By promoting the importance of healthy living anytime and anywhere, as envisioned in the Healthy Living Master Plan, HPB aims to drive sustainable behaviour change and ultimately foster a community that embraces healthy living!")));
+    }
 }

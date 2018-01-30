@@ -14,7 +14,7 @@ Feature: Visit the HPB Corporate Website
   Scenario: Joe sees the useful info tabs
     * 'Joe' sees the useful info tabs
 
-  @workplace
+  @now
   Scenario: Joe reads articles found in the News Online for Workplaces section
     * 'Joe' wants to read N.O.W Issues
 
@@ -35,3 +35,15 @@ Feature: Visit the HPB Corporate Website
   @about
   Scenario: Joe visits the about page
     * 'Joe' visits the about page
+
+  @workplace
+  Scenario: Joe visits the workplace page
+    * 'Joe' visits the workplace page
+
+  @schools
+  Scenario: Joe visits the schools page
+    * 'Joe' visits the schools page
+
+  @community
+  Scenario: Joe visits the community page
+    * 'Joe' visits the community page
