@@ -47,3 +47,11 @@ Feature: Visit the HPB Corporate Website
   @community
   Scenario: Joe visits the community page
     * 'Joe' visits the community page
+
+  @healthy-living
+  Scenario: Joe visits the healthy living page
+    * 'Joe' visits the healthy living page
+
+  @partnership
+  Scenario: Joe visits the partnership page
+    * 'Joe' visits the partnership page

@@ -4,14 +4,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
-import sg.four.serenity.callisto.ui.Home;
+import sg.four.serenity.callisto.ui.HomePage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ScrollToSection implements Performable {
 
     private final String section_name;
-    Home page;
+    HomePage page;
 
     protected ScrollToSection(String section_name){
         this.section_name = section_name;

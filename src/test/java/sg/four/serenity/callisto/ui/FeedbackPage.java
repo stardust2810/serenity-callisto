@@ -2,7 +2,6 @@ package sg.four.serenity.callisto.ui;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.WhenPageOpens;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -15,7 +14,7 @@ public class FeedbackPage extends PageObject {
     @FindBy(id="Dropdown-1")
     WebElement formSection;
 
-    private static Logger log = LogManager.getLogger(Home.class);
+    private static Logger log = LogManager.getLogger(HomePage.class);
     //public static Target CARD_ITEMS = Target.the("list of cards").locatedBy(".link-card__title");
 /*
     @WhenPageOpens

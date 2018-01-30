@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 import sg.four.serenity.callisto.ui.AboutPage;
-import sg.four.serenity.callisto.ui.Home;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
