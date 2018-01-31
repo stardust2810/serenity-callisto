@@ -55,3 +55,7 @@ Feature: Visit the HPB Corporate Website
   @partnership
   Scenario: Joe visits the partnership page
     * 'Joe' visits the partnership page
+
+  @news
+  Scenario: Joe visits the news page
+    * 'Joe' visits the news page

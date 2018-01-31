@@ -96,6 +96,10 @@ public class CallistoVisitorSteps {
     public void visits_the_workplace_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenWorkplacePage.open());
         theActorCalled(actorName).should(seeThat(WorkplacePageResults.text(),containsString("The workplace is where most adult Singaporeans spend a majority of their day at, and is thus a key setting for health promotion. Companies and organisations can have a positive influence on their employee’s health, through creating the right type of working environment.")));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Healthy Workplace Ecosystem"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Workplace Programmes"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Singapore HEALTH Award"))));
+        theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Useful Information for Organisations"))));
     }
 
     @Given("^(.*) visits the schools page$")
@@ -138,5 +142,17 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Partnership Opportunities"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Directory of Service Providers"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Grants"))));
+    }
+
+    @Given("^(.*) visits the news page$")
+    public void visits_the_news_page(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenNewsPage.open());
+        theActorCalled(actorName).should(seeThat(NewsPageResults.text(),containsString("This section contains press releases issued by the Health Promotion Board.")));
+        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Singapore Health Award recognises 223 Recipients for Positively Impacting Workers' Health and Wellbeing"))));
+        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Over 300,000 Workers given direct access to customised health and wellness programmes at their workplaces"))));
+        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Healthier dining programme extended to include food in hawker centres and coffee shops"))));
+        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("National Steps Challenge™ Season Two"))));
+        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Response to competition commission of Singapore's recommendations on formula milk"))));
+        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("New exercise campaign to encourage active living among seniors, including those with reduced mobility"))));
     }
 }
