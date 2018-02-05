@@ -1,4 +1,0 @@
-Browsing the Healthy Living Page of the HPB Corporate Website
-In order start exploring the Healthy Living page
-As a user
-I want to view related articles on the Healthy Living page

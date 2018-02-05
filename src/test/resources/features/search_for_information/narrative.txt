@@ -1,4 +1,0 @@
-Using Algolia search to find information on the HPB Corporate Website
-In order look for a particular information on the HPB Corporate Website
-As a user
-I want key in my search terms in the search box and get search results that are relevant to what i am looking for
