@@ -15,7 +15,7 @@ public class OpenSitefinityCloudDashboardPage implements Task{
         actor.attemptsTo(
             Open.browserOn().the(page)
         );
-        
+
         actor.attemptsTo(FillUpSitefinityCloudLoginForm.entersDetails("site17567204059862", "PqIMOM7J"));
     }
 

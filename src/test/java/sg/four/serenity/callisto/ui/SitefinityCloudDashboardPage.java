@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
 public class SitefinityCloudDashboardPage extends PageObject {
 
     private static Logger log = LogManager.getLogger(SitefinityCloudDashboardPage.class);
-    public static Target NAME = Target.the("name").locatedBy("#username");
+    public static Target NAME = Target.the("name").located(By.cssSelector("#username"));
     public static Target PASSWORD = Target.the("password").locatedBy("password");
     public static Target LOGIN_BUTTON = Target.the("login").locatedBy("loginButton");
 }
