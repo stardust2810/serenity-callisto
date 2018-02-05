@@ -59,3 +59,11 @@ Feature: Visit the HPB Corporate Website
   @news
   Scenario: Joe visits the news page
     * 'Joe' visits the news page
+
+  @rate
+  Scenario: Joe submits the satisfation poll
+    * 'Joe' submits the satisfation poll
+
+  @login
+  Scenario: Jeffrey tries to log in to the CMS with wrong password
+    * 'Jeffrey' tries to log in to the CMS with wrong password

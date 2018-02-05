@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import sg.four.serenity.callisto.questions.*;
 import sg.four.serenity.callisto.tasks.*;
+import sg.four.serenity.callisto.ui.SitefinityDashboardPage;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -83,7 +84,7 @@ public class CallistoVisitorSteps {
     public void submits_a_feedback(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenFeedbackPage.open());
         theActorCalled(actorName).attemptsTo(FillUpFeedbackForm.entersDetails("Suggestions", "Allow me to update my appointment online", "onlyyou@hotmail.com", "Joe Tan"));
-        //theActorCalled(actorName).should(seeThat(FeedbackFormResults.text(),is("Thank you for your feedback! We will take down your message and get back to you very soon!")));
+        theActorCalled(actorName).should(seeThat(FeedbackFormResults.text(),is("Thank you for your feedback! We will take down your message and get back to you very soon!")));
     }
 
     @Given("^(.*) visits the about page$")
@@ -154,5 +155,19 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("National Steps Challenge™ Season Two"))));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Response to competition commission of Singapore's recommendations on formula milk"))));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("New exercise campaign to encourage active living among seniors, including those with reduced mobility"))));
+    }
+
+    @Given("^(.*) submits the satisfation poll")
+    public void rating(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenRateThisSitePage.open());
+        theActorCalled(actorName).attemptsTo(FillUpRateThisSiteForm.entersDetails("5", "2", "3", "Joe Tan", "Joe Tan", "onlyyou@hotmail.com"));
+        theActorCalled(actorName).should(seeThat(RateThisSiteFormResults.text(),containsString("Thank you for filling out the survey!")));
+    }
+
+    @Given("^(.*) tries to log in to the CMS with wrong password")
+    public void tries_to_log_in_to_the_CMS_with_wrong_password(String actorName) throws Throwable {
+        theActorCalled(actorName).wasAbleTo(OpenSitefinityDashboardPage.open());
+        theActorCalled(actorName).attemptsTo(FillUpSitefinityLoginForm.entersDetails("jeffrey", "test12345611222333"));
+        //theActorCalled(actorName).should(seeThat(RateThisSiteFormResults.text(),containsString("Thank you for filling out the survey!")));
     }
 }

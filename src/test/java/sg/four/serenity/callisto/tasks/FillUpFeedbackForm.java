@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import sg.four.serenity.callisto.ui.FeedbackForm;
 import org.openqa.selenium.support.ui.Select;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.actions.ClickOnTarget;
+import net.serenitybdd.screenplay.actions.ScrollToTarget;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -45,14 +48,17 @@ public class FillUpFeedbackForm implements Task {
                    log.info(FeedbackForm.CATEGORY_DROPDOWN.getCssOrXPathSelector());
                }
                try {
-Select a = new Select(FeedbackForm.CATEGORY_DROPDOWN.resolveFor(actor));
-a.selectByValue("Suggestions");
-                  // actor.attemptsTo(Enter.theValue(category).into(FeedbackForm.CATEGORY_DROPDOWN).thenHit(Keys.TAB));
-                   //actor.attemptsTo(Enter.theValue(details).into(FeedbackForm.DETAILS_TEXTAREA).thenHit(Keys.TAB));
-                   //actor.attemptsTo(Enter.theValue(email).into(FeedbackForm.EMAIL_TEXTFIELD).thenHit(Keys.TAB));
+
+                   actor.attemptsTo(new ScrollToTarget(FeedbackForm.CATEGORY_DROPDOWN));
+                   actor.attemptsTo(SelectFromOptions.byValue("Suggestions").from(FeedbackForm.CATEGORY_DROPDOWN));
+                   actor.attemptsTo(new ScrollToTarget(FeedbackForm.DETAILS_TEXTAREA));
+                   actor.attemptsTo(new EnterValueIntoTarget("This is an automated test script", FeedbackForm.DETAILS_TEXTAREA));
+                   actor.attemptsTo(new ScrollToTarget(FeedbackForm.EMAIL_TEXTFIELD));
                    actor.attemptsTo(new EnterValueIntoTarget("testhotmail.com", FeedbackForm.EMAIL_TEXTFIELD));
-                   //actor.attemptsTo(Enter.theValue(name).into(FeedbackForm.NAME_TEXTFIELD).thenHit(Keys.TAB));
-                   //actor.attemptsTo(Click.on(FeedbackForm.SUBMIT_BUTTON));
+                   actor.attemptsTo(new ScrollToTarget(FeedbackForm.NAME_TEXTFIELD));
+                   actor.attemptsTo(new EnterValueIntoTarget("Serenity", FeedbackForm.NAME_TEXTFIELD));
+                   actor.attemptsTo(new ScrollToTarget(FeedbackForm.SUBMIT_BUTTON));
+                   actor.attemptsTo(new ClickOnTarget(FeedbackForm.SUBMIT_BUTTON));
                }catch (Exception e) {
                    log.error(e);
                }
