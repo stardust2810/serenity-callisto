@@ -163,11 +163,4 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).attemptsTo(FillUpRateThisSiteForm.entersDetails("5", "2", "3", "Joe Tan", "Joe Tan", "onlyyou@hotmail.com"));
         theActorCalled(actorName).should(seeThat(RateThisSiteFormResults.text(),containsString("Thank you for filling out the survey!")));
     }
-
-    @Given("^(.*) tries to log in to the CMS with wrong password")
-    public void tries_to_log_in_to_the_CMS_with_wrong_password(String actorName) throws Throwable {
-        theActorCalled(actorName).wasAbleTo(OpenSitefinityDashboardPage.open());
-        theActorCalled(actorName).attemptsTo(FillUpSitefinityLoginForm.entersDetails("jeffrey", "test12345611222333"));
-        //theActorCalled(actorName).should(seeThat(RateThisSiteFormResults.text(),containsString("Thank you for filling out the survey!")));
-    }
 }

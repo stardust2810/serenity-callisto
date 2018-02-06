@@ -50,13 +50,17 @@ public class FillUpFeedbackForm implements Task {
                try {
 
                    actor.attemptsTo(new ScrollToTarget(FeedbackForm.CATEGORY_DROPDOWN));
-                   actor.attemptsTo(SelectFromOptions.byValue("Suggestions").from(FeedbackForm.CATEGORY_DROPDOWN));
+                   //actor.attemptsTo(SelectFromOptions.byValue("Suggestions").from(FeedbackForm.CATEGORY_DROPDOWN));
+                   actor.attemptsTo(SelectFromOptions.byValue(category).from(FeedbackForm.CATEGORY_DROPDOWN));
                    actor.attemptsTo(new ScrollToTarget(FeedbackForm.DETAILS_TEXTAREA));
-                   actor.attemptsTo(new EnterValueIntoTarget("This is an automated test script", FeedbackForm.DETAILS_TEXTAREA));
+                   //actor.attemptsTo(new EnterValueIntoTarget("This is an automated test script", FeedbackForm.DETAILS_TEXTAREA));
+                   actor.attemptsTo(new EnterValueIntoTarget(details, FeedbackForm.DETAILS_TEXTAREA));
                    actor.attemptsTo(new ScrollToTarget(FeedbackForm.EMAIL_TEXTFIELD));
-                   actor.attemptsTo(new EnterValueIntoTarget("testhotmail.com", FeedbackForm.EMAIL_TEXTFIELD));
+                   //actor.attemptsTo(new EnterValueIntoTarget("test@hotmail.com", FeedbackForm.EMAIL_TEXTFIELD));
+                   actor.attemptsTo(new EnterValueIntoTarget(email, FeedbackForm.EMAIL_TEXTFIELD));
                    actor.attemptsTo(new ScrollToTarget(FeedbackForm.NAME_TEXTFIELD));
-                   actor.attemptsTo(new EnterValueIntoTarget("Serenity", FeedbackForm.NAME_TEXTFIELD));
+                   //actor.attemptsTo(new EnterValueIntoTarget("Serenity", FeedbackForm.NAME_TEXTFIELD));
+                   actor.attemptsTo(new EnterValueIntoTarget(name, FeedbackForm.NAME_TEXTFIELD));
                    actor.attemptsTo(new ScrollToTarget(FeedbackForm.SUBMIT_BUTTON));
                    actor.attemptsTo(new ClickOnTarget(FeedbackForm.SUBMIT_BUTTON));
                }catch (Exception e) {

@@ -29,8 +29,8 @@ Feature: Visit the HPB Corporate Website
     | service provider | Directory of Service Providers |
 
   @feedback
-  Scenario: Joe submits a feedback
-    * 'Joe' submits a feedback
+  Scenario: Rei En submits a feedback
+    * 'Rei En' submits a feedback
 
   @about
   Scenario: Joe visits the about page
@@ -63,7 +63,3 @@ Feature: Visit the HPB Corporate Website
   @rate
   Scenario: Joe submits the satisfation poll
     * 'Joe' submits the satisfation poll
-
-  @login
-  Scenario: Jeffrey tries to log in to the CMS with wrong password
-    * 'Jeffrey' tries to log in to the CMS with wrong password
