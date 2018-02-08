@@ -1,4 +1,4 @@
 Managing the content for the HPB Corporate Website
 In order ensure that the content stays updated and relevant in the HPB Corporate Website
 As a HPB staff user
-Joe wants to login to the Sitefinity CMS and manage the content for Callisto
+Kallista wants to login to the Sitefinity CMS and manage the content for Callisto

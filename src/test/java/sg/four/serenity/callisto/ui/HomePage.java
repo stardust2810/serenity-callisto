@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 public class HomePage extends PageObject {
 
     private static Logger log = LogManager.getLogger(HomePage.class);
-    //public static Target MENU_ABOUT = Target.the("menu about").locatedBy("/html/body/form[1]/header/div[3]/nav/div/ul/li[2]/a");
 
     public boolean scrolls_to_section(String sectionName) {
         try {

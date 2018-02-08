@@ -63,6 +63,7 @@ public class CallistoVisitorSteps {
     @Given("^(.*) wants to read N\\.O\\.W Issues$")
     public void user_wants_to_read_N_O_W_Issues(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(GoToNOWLandingPage.open());
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
         theActorCalled(actorName).should(seeThat(NOWArticleListResults.cards_shown(), hasItem(containsString("N.O.W Issue 1"))));
         theActorCalled(actorName).should(seeThat(NOWArticleListResults.cards_shown(), hasItem(containsString("N.O.W Issue 2"))));
     }
@@ -97,6 +98,7 @@ public class CallistoVisitorSteps {
     public void visits_the_workplace_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenWorkplacePage.open());
         theActorCalled(actorName).should(seeThat(WorkplacePageResults.text(),containsString("The workplace is where most adult Singaporeans spend a majority of their day at, and is thus a key setting for health promotion. Companies and organisations can have a positive influence on their employee’s health, through creating the right type of working environment.")));
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Healthy Workplace Ecosystem"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Workplace Programmes"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Singapore HEALTH Award"))));
@@ -107,6 +109,7 @@ public class CallistoVisitorSteps {
     public void visits_the_schools_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenSchoolsPage.open());
         theActorCalled(actorName).should(seeThat(SchoolsPageResults.text(),containsString("Schools are a large part of a student’s life, and can play an important role in establishing life-long healthy habits. As such, we work closely with schools to create health promoting environments where students can play, learn, and grow in.")));
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("School Programmes"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Student Medical Appointments"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("HealthZone"))));
@@ -118,6 +121,7 @@ public class CallistoVisitorSteps {
     public void visits_the_community_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenCommunityPage.open());
         theActorCalled(actorName).should(seeThat(CommunityPageResults.text(),containsString("By promoting the importance of healthy living anytime and anywhere, as envisioned in the Healthy Living Master Plan, HPB aims to drive sustainable behaviour change and ultimately foster a community that embraces healthy living!")));
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
         theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Healthcare Partners"))));
         theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Smoking Cessation Consultant Training"))));
         theActorCalled(actorName).should(seeThat(CommunityArticleListResults.cards_shown(), hasItem(containsString("Health Ambassadors"))));
@@ -129,6 +133,7 @@ public class CallistoVisitorSteps {
     public void visits_the_healthy_living_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenHealthyLivingPage.open());
         theActorCalled(actorName).should(seeThat(HealthyLivingPageResults.text(),containsString("At Health Promotion Board, we promote a holistic approach to leading a healthy lifestyle. This includes staying physically active while maintaining a balanced diet, and going for regular screening. Take a look around this section for a better understanding of the various types of work that we do!")));
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
         theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Substance Abuse"))));
         theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Food & Beverage"))));
         theActorCalled(actorName).should(seeThat(HealthyLivingArticleListResults.cards_shown(), hasItem(containsString("Physical Activity"))));
@@ -139,6 +144,7 @@ public class CallistoVisitorSteps {
     public void visits_the_partnership_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenPartnershipPage.open());
         theActorCalled(actorName).should(seeThat(PartnershipPageResults.text(),containsString("Building a healthy nation is not a task we can accomplish solely on our own. We work with a variety of partners to run and co-create health promoting festivals and programmes.")));
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Partner Merchants"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Partnership Opportunities"))));
         theActorCalled(actorName).should(seeThat(PartnershipArticleListResults.cards_shown(), hasItem(containsString("Directory of Service Providers"))));
@@ -149,6 +155,7 @@ public class CallistoVisitorSteps {
     public void visits_the_news_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenNewsPage.open());
         theActorCalled(actorName).should(seeThat(NewsPageResults.text(),containsString("This section contains press releases issued by the Health Promotion Board.")));
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("listing-wrapper"));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Singapore Health Award recognises 223 Recipients for Positively Impacting Workers' Health and Wellbeing"))));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Over 300,000 Workers given direct access to customised health and wellness programmes at their workplaces"))));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Healthier dining programme extended to include food in hawker centres and coffee shops"))));

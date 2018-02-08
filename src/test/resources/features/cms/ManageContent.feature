@@ -13,3 +13,7 @@ Feature: Manages Content in the Sitefinity CMS
   @reset-fail
   Scenario: Unauthorised user tries to reset password @Skip
     * 'Unauthorised' tries to reset password
+
+  @page-cloud
+  Scenario: Kallista creates page in Sitefinity Cloud
+    * 'Kallista' creates page in cloud

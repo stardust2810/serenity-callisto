@@ -29,8 +29,8 @@ Feature: Visit the HPB Corporate Website
     | service provider | Directory of Service Providers |
 
   @feedback
-  Scenario: Rei En submits a feedback
-    * 'Rei En' submits a feedback
+  Scenario: Kallista submits a feedback
+    * 'Kallista' submits a feedback
 
   @about
   Scenario: Kallista visits the about page
