@@ -40,7 +40,7 @@ public class CallistoVisitorSteps {
     @Given("^(.*) sees the navigation menu$")
     public void user_can_see_the_navigation_menu(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenHomePage.loads_home());
-        theActorCalled(actorName).should(seeThat(MainMenuItemResults.menu_items_shown(), hasItem(containsString("HomePage"))));
+        theActorCalled(actorName).should(seeThat(MainMenuItemResults.menu_items_shown(), hasItem(containsString("Home"))));
         theActorCalled(actorName).should(seeThat(MainMenuItemResults.menu_items_shown(), hasItem(containsString("About"))));
         theActorCalled(actorName).should(seeThat(MainMenuItemResults.menu_items_shown(), hasItem(containsString("Workplace"))));
         theActorCalled(actorName).should(seeThat(MainMenuItemResults.menu_items_shown(), hasItem(containsString("Schools"))));
@@ -157,7 +157,7 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("New exercise campaign to encourage active living among seniors, including those with reduced mobility"))));
     }
 
-    @Given("^(.*) submits the satisfation poll")
+    @Given("^(.*) submits the satisfaction poll")
     public void rating(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenRateThisSitePage.open());
         theActorCalled(actorName).attemptsTo(FillUpRateThisSiteForm.entersDetails("5", "2", "3", "Joe Tan", "Joe Tan", "onlyyou@hotmail.com"));

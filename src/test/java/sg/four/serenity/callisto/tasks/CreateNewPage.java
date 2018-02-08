@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sg.four.serenity.callisto.ui.SitefinityCreateAPage;
 import sg.four.serenity.callisto.ui.SitefinityLoginForm;
 import sg.four.serenity.callisto.ui.SitefinityMainMenu;
 
@@ -30,6 +31,17 @@ public class CreateNewPage implements Task {
         actor.attemptsTo(new ScrollToTarget(SitefinityMainMenu.PAGE));
         actor.attemptsTo(new ClickOnTarget(SitefinityMainMenu.PAGE));
 
+        //wait for the new page to load
+        actor.attemptsTo(new ScrollToTarget(SitefinityMainMenu.CREATE_A_PAGE));
+        actor.attemptsTo(new ClickOnTarget(SitefinityMainMenu.CREATE_A_PAGE));
+
+        //enter the name
+        actor.attemptsTo(new ScrollToTarget(SitefinityCreateAPage.NAME));
+        actor.attemptsTo(new EnterValueIntoTarget("Automated Test Page", SitefinityCreateAPage.NAME));
+
+        //clicks on the create button
+        actor.attemptsTo(new ScrollToTarget(SitefinityCreateAPage.CREATE_AND_ADD_BUTTON));
+        actor.attemptsTo(new ClickOnTarget(SitefinityCreateAPage.CREATE_AND_ADD_BUTTON));
     }
 
     public static CreateNewPage createAPage(){

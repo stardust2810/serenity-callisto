@@ -65,22 +65,8 @@ public class FillUpRateThisSiteForm implements Task {
             log.error(e);
         }
 
-
-        //BrowseTheWeb.as(actor).setImplicitTimeout(30, SECONDS);
-        //BrowseTheWeb.as(actor).resetImplicitTimeout();
         actor.attemptsTo(new ScrollToTarget(RateThisSitePage.SUBMIT_BUTTON));
         actor.attemptsTo(new ClickOnTarget(RateThisSitePage.SUBMIT_BUTTON));
-           /*
-           actor.attemptsTo(SelectFromOptions.byValue("Suggestions").from(FeedbackForm.CATEGORY_DROPDOWN));
-           actor.attemptsTo(new ScrollToTarget(FeedbackForm.DETAILS_TEXTAREA));
-           actor.attemptsTo(new EnterValueIntoTarget("This is an automated test script", FeedbackForm.DETAILS_TEXTAREA));
-           actor.attemptsTo(new ScrollToTarget(FeedbackForm.EMAIL_TEXTFIELD));
-           actor.attemptsTo(new EnterValueIntoTarget("testhotmail.com", FeedbackForm.EMAIL_TEXTFIELD));
-           actor.attemptsTo(new ScrollToTarget(FeedbackForm.NAME_TEXTFIELD));
-           actor.attemptsTo(new EnterValueIntoTarget("Serenity", FeedbackForm.NAME_TEXTFIELD));
-           actor.attemptsTo(new ScrollToTarget(FeedbackForm.SUBMIT_BUTTON));
-           actor.attemptsTo(new ClickOnTarget(FeedbackForm.SUBMIT_BUTTON));
-           */
     }
 
     public static FillUpRateThisSiteForm entersDetails(String q1, String q2, String q3, String comments, String email, String name){
