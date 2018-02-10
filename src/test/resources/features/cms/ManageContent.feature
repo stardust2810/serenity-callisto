@@ -16,4 +16,4 @@ Feature: Manages Content in the Sitefinity CMS
 
   @page-cloud
   Scenario: Kallista creates page in Sitefinity Cloud
-    * 'Kallista' creates page in cloud
+    * 'Kallista' creates page in sitefinity cloud

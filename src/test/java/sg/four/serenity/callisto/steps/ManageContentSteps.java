@@ -55,8 +55,8 @@ public class ManageContentSteps {
         theActorCalled(actorName).should(seeThat(SitefinityResetPasswordResults.text(),containsString("An email with a link to reset your password has been sent to your email.")));
     }
 
-    @Given("^(.*) creates page in cloud")
-    public void creates_page_in_cloud(String actorName) throws Throwable {
+    @Given("^(.*) creates page in sitefinity cloud")
+    public void creates_page_in_sitefinity_cloud(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenSitefinityCloudDashboardPage.open());
         //theActorCalled(actorName).attemptsTo(FillUpSitefinityLoginForm.entersDetails("jeffrey", "C@llisto3107"));
         theActorCalled(actorName).attemptsTo(CreateNewPage.createAPage());
