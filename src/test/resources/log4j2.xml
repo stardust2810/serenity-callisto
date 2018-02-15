@@ -4,10 +4,19 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="[%-5level][%logger{36}] %msg%n" />
         </Console>
+
+        <Appender type="File" name="File" fileName="./log.txt">
+            <Layout type="PatternLayout">
+                <Pattern>[%-5level][%logger{36}] %msg%n</Pattern>
+            </Layout>
+        </Appender>
     </Appenders>
+
+
     <Loggers>
-        <Root level="fatal">
+        <Root level="all">
             <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
         </Root>
     </Loggers>
 </Configuration>
