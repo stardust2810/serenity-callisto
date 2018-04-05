@@ -42,7 +42,7 @@ public class ManageContentSteps {
     @Given("^(.*) creates a new page")
     public void creates_a_new_page(String actorName) throws Throwable {
         theActorCalled(actorName).wasAbleTo(OpenSitefinityDashboardPage.open());
-        theActorCalled(actorName).attemptsTo(FillUpSitefinityLoginForm.entersDetails("jeffrey", "C@llisto3107"));
+        theActorCalled(actorName).attemptsTo(FillUpSitefinityLoginForm.entersDetails("jeffrey", "C@llisto2810"));
         theActorCalled(actorName).attemptsTo(CreateNewPage.createAPage());
     }
 

@@ -63,3 +63,7 @@ Feature: Visit the HPB Corporate Website
   @rate
   Scenario: Kallista submits the satisfaction poll
     * 'Kallista' submits the satisfaction poll
+
+  @services
+  Scenario: Kallista visits the services page
+    * 'Kallista' visits the services page

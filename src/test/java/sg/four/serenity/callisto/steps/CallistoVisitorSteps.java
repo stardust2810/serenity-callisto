@@ -161,7 +161,7 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Healthier dining programme extended to include food in hawker centres and coffee shops"))));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("National Steps Challenge™ Season Two"))));
         theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("Response to competition commission of Singapore's recommendations on formula milk"))));
-        theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("New exercise campaign to encourage active living among seniors, including those with reduced mobility"))));
+        //theActorCalled(actorName).should(seeThat(NewsArticleListResults.cards_shown(), hasItem(containsString("New exercise campaign to encourage active living among seniors, including those with reduced mobility"))));
     }
 
     @Given("^(.*) submits the satisfaction poll")
@@ -169,5 +169,38 @@ public class CallistoVisitorSteps {
         theActorCalled(actorName).wasAbleTo(OpenRateThisSitePage.open());
         theActorCalled(actorName).attemptsTo(FillUpRateThisSiteForm.entersDetails("5", "2", "3", "Joe Tan", "Joe Tan", "onlyyou@hotmail.com"));
         theActorCalled(actorName).should(seeThat(RateThisSiteFormResults.text(),containsString("Thank you for filling out the survey!")));
+    }
+
+    @Given("^(.*) visits the services page")
+    public void visits_the_services_page(String actorName) throws Throwable {
+        //view the services page
+        theActorCalled(actorName).wasAbleTo(OpenServicesPage.open());
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Student Medical Appointments"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Energy & Nutrient Composition of Recipe Analysis"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Nutrition Information Panel Generator"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Energy & Nutrient Composition of Food"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Online Nutrient Analysis Tool"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("National Immunisation Registry (NIR)"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Child Consent Portal"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Directory of Service Providers"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Screen for Life"))));
+        theActorCalled(actorName).should(seeThat(ServicesArticleListResults.cards_shown(), hasItem(containsString("Food Intake Assessment"))));
+
+        //goes to the Student Medical Appointments page
+        theActorCalled(actorName).wasAbleTo(OpenMedicalAppointmentsPage.open());
+        theActorCalled(actorName).attemptsTo(ScrollToSection.called("inner-section"));
+        theActorCalled(actorName).should(seeThat(MedicalAppoinntmentsArticleListResults.cards_shown(), hasItem(containsString("New Appointments"))));
+        theActorCalled(actorName).should(seeThat(MedicalAppoinntmentsArticleListResults.cards_shown(), hasItem(containsString("Change of Medical Appointment"))));
+
+        //submits a New Appointment form
+        theActorCalled(actorName).wasAbleTo(OpenNewMedicalAppointmentPage.open());
+        theActorCalled(actorName).attemptsTo(FillUpNewMedicalAppointmentForm.entersDetails("test", "S9876543Z", "02-04-2010", "test@test.com", "69999999", "for testing only, please ignore"));
+        theActorCalled(actorName).should(seeThat(NewMedicalAppointmentFormResults.text(),containsString("Thank you! Your appointment request is recorded!")));
+
+        //submits a Change Appointment form
+        theActorCalled(actorName).wasAbleTo(OpenChangeAppointmentPage.open());
+        theActorCalled(actorName).attemptsTo(FillUpChangeAppointmentForm.entersDetails("test", "S9876543Z", "test@test.com"));
+        theActorCalled(actorName).should(seeThat(NewMedicalAppointmentFormResults.text(),containsString("Success! Thanks for filling out our form!")));
     }
 }
